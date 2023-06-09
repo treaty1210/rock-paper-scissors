@@ -8,10 +8,6 @@ function getComputerChoice() {
     }
 }
 
-
-
-
-
 function round(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return "It's a draw";
@@ -26,8 +22,15 @@ function round(playerSelection, computerSelection) {
     }
 }
 
+function game() {
+        for (let i = 0; i < 5; i++) {
+            const playerSelection = prompt("Type in rock, paper, or scissors").toLowerCase();
+            const computerSelection = getComputerChoice(); 
+            round(playerSelection, computerSelection);
+            console.log(round(playerSelection, computerSelection));
+        } 
+}
 
 
-const playerSelection = prompt("Type in rock, paper, or scissors").toLowerCase();
-const computerSelection = getComputerChoice();
+
 
