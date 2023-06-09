@@ -1,3 +1,4 @@
+//Determines randomly computer choice
 function getComputerChoice() {
     if (Math.floor(Math.random() * 3) === 0) {
         return "rock";
@@ -8,29 +9,56 @@ function getComputerChoice() {
     }
 }
 
+//Main function of RPS
 function round(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        return "It's a draw";
+        return draw;
     } else if (playerSelection === "rock"  && computerSelection === "scissors" ) {
-        return "You win! Rock beats Scissors";
+        return win;  
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        return "You win! Paper beats Rock";
+        return win;  
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return "You win! Scissors beats Paper";
+        return win;  
     } else {
-        return `You lose! ${computerSelection} beats ${playerSelection}`;
+        return lose;
     }
 }
 
+//Messages for round outcome
+let playerScore = 0;
+let compScore = 0;
+let drawScore = 0;
+let draw = "It's a draw.";
+let win = "You win!";
+let lose = "You lose!";
+
+
+
+//Game loop
 function game() {
         for (let i = 0; i < 5; i++) {
-            const playerSelection = prompt("Type in rock, paper, or scissors").toLowerCase();
+            let playerSelection = prompt("Type in rock, paper, or scissors").toLowerCase();
             const computerSelection = getComputerChoice(); 
-            round(playerSelection, computerSelection);
-            console.log(round(playerSelection, computerSelection));
+            let result = round(playerSelection, computerSelection);
+            console.log(result);
+            score(result);
+            console.log("Total Score (Player): " + playerScore);
+            console.log("Total Score (Computer): " + compScore);
+            console.log("Total Draws: " + drawScore);
         } 
 }
 
+
+//Scoring function
+function score(result) {
+    if (result === win) {
+        playerScore++;
+    } else if (result === lose) {
+        compScore++;
+    } else  {
+        drawScore++;
+    }
+}
 
 
 
