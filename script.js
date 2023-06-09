@@ -8,7 +8,9 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
+
+
+
 
 function round(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
@@ -18,12 +20,14 @@ function round(playerSelection, computerSelection) {
     } else if (playerSelection === "paper" && computerSelection === "rock") {
         return "You win! Paper beats Rock";
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return "You win! Scissors beats Paper"
+        return "You win! Scissors beats Paper";
     } else {
-        return `You lose! ${getComputerChoice()} beats ${playerSelection()}`
+        return `You lose! ${computerSelection} beats ${playerSelection}`;
     }
-
 }
 
-const playerSelection = prompt("Type in rock, paper, or scissors").toLowerCase;
+
+
+const playerSelection = prompt("Type in rock, paper, or scissors").toLowerCase();
 const computerSelection = getComputerChoice();
+
