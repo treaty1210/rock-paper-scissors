@@ -23,6 +23,69 @@
         border: 1px solid white;
         border-radius: 10px;
     }
+
+    .pickArea {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .pentagon {
+        width: 250px;
+        height: 250px;
+        margin-top: 25px;
+        position: relative;
+        left: 50px;
+    }
+
+    .pickArea :not(:first-child) {
+        position: relative;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pickArea :not(:first-child) > img {
+        width: 60px;
+        height: 60px;
+    }
+
+
+    .rockBtn {
+        background-image: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+        border-radius: 50%;
+        bottom: 50px;
+        left: 200px;
+    }
+
+    .paperBtn {
+        background-image: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+        border-radius: 50%;
+        bottom: 290px;
+        left: 250px;
+    }
+
+    .scissorsBtn {
+        background-image: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+        border-radius: 50%;
+        bottom: 450px;
+        left: 130px;
+    }
+
+    .lizardBtn {
+        background-image: radial-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+        border-radius: 50%;
+        bottom: 320px;
+        left: 55px;
+    }
+
+    .spockBtn {
+        background-image: radial-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+        border-radius: 50%;
+        bottom: 560px;
+        left: 20px;
+    }
 }
 
 body {
@@ -32,6 +95,8 @@ body {
 
 .container {
     display: grid;
+    grid-template-rows: 0.2fr 0.6fr 0.1fr 0.1fr;
+
 }
 
 .header {
@@ -53,8 +118,30 @@ body {
     color: hsl(229, 25%, 31%);
 }
 
+/* .pickArea {
+    display: grid;
+} */
+
+.pickArea :not(:first-child) > img {
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+/* .pentagon {
+    justify-self: center;
+    align-self: center; 
+} */
+
+.picks, .result, .playAgain {
+    display: none;
+}
+
 .attribution {
     font-size: 11px; 
     text-align: center;
     color: hsl(228, 45%, 44%);
+    /* display: flex;
+    justify-content: center;
+    align-items: end; */
 }
