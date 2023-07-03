@@ -1,3 +1,58 @@
+@media only screen and (max-width: 768px) {
+    .container {
+        grid-template-rows: 0.7fr 2fr 0.3fr 0.1fr;
+    }
+
+    .header {
+        grid-template-columns: 1fr 1fr;
+        border: 2px solid hsl(217, 16%, 45%);
+        border-radius: 6px;
+        margin: 24px;
+    }
+
+    .logo {
+        width: 80px;
+        height: 80px;
+        margin: 20px;
+    }
+
+    .score {
+        width: 80px;
+        height: 80px;
+        margin: 20px;
+        border: 1px solid white;
+        border-radius: 10px;
+    }
+}
+
+body {
+    background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.container {
+    display: grid;
+}
+
+.header {
+    display: grid;
+}
+
+.score {
+    justify-self: flex-end;
+    align-self: center;
+    color: hsl(229, 64%, 46%);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.scoreVal {
+    color: hsl(229, 25%, 31%);
+}
+
 .attribution {
     font-size: 11px; 
     text-align: center;
