@@ -34,7 +34,7 @@
         height: 250px;
         margin-top: 25px;
         position: relative;
-        left: 50px;
+        left: 60px;
     }
 
     .pickArea :not(:first-child) {
@@ -56,35 +56,35 @@
         background-image: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
         border-radius: 50%;
         bottom: 50px;
-        left: 200px;
+        left: 210px;
     }
 
     .paperBtn {
         background-image: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
         border-radius: 50%;
         bottom: 290px;
-        left: 250px;
+        left: 260px;
     }
 
     .scissorsBtn {
         background-image: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
         border-radius: 50%;
         bottom: 450px;
-        left: 130px;
+        left: 140px;
     }
 
     .lizardBtn {
         background-image: radial-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
         border-radius: 50%;
         bottom: 320px;
-        left: 55px;
+        left: 65px;
     }
 
     .spockBtn {
         background-image: radial-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
         border-radius: 50%;
         bottom: 560px;
-        left: 20px;
+        left: 30px;
     }
 }
 
