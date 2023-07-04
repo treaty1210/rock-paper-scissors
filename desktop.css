@@ -203,4 +203,59 @@
         display: grid;
         justify-items: center;
     }
+
+    /* RULES POP UP START */
+    .rulesPopUp {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(33, 33, 33, 0.95);
+        align-items: center;
+        justify-items: center;
+    }
+    .rulesPage {
+        background-color: white;
+        justify-items: center;
+        align-content: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr 0.5fr;
+        grid-template-areas: 
+        "rulesTitle closeRules"
+        "img img"
+        "attribution attribution";
+        display: grid;
+        width: 20vw;
+        height: 50vh;
+    }
+
+    .rulesTitle, .rulesPage > img, .closeRules {
+        align-self: center;
+    }
+
+    .rulesTitle {
+        grid-area: rulesTitle;
+        font-weight: 800;
+    }
+
+    .rulesPage > img {
+        grid-area: img;
+    }
+
+    .closeRules {
+        grid-area:  closeRules;
+        justify-self: flex-end;
+        margin-right: 30px;
+    }
+
+    .rulesTitle, .closeRules {
+        font-size: 30px;
+        color: hsl(229, 25%, 31%);
+    }
+
+    .rulesPage > .attribution {
+        grid-area: attribution;
+        align-self: flex-end;
+    }
 }
