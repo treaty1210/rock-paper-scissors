@@ -1,7 +1,7 @@
 @media only screen and (max-width: 768px) {
 /* MOBILE GENERAL SIZE START */
-    .gameArea {
-        grid-template-rows: 0.7fr 2fr 0.3fr 0.1fr 0.1fr;
+    .container {
+        grid-template-rows: 0.7fr 2fr 0.3fr 0.1fr;
     }
 /* MOBILE GENERAL SIZE END */
 
@@ -157,10 +157,8 @@
 /* RULES START */
     .rules {
         justify-self: center;
-        align-self: center;
+        align-self: flex-end;
         margin-top: 50px;
-        position: relative;
-        bottom: 30px;
         padding: 20px;
         width: 40vw;
         color: white;
@@ -190,7 +188,7 @@
     .rulesTitle, .rulesPage > img, .closeRules {
         align-self: center;
     }
-    
+
     .rulesTitle, .closeRules {
         font-size: 30px;
         color: hsl(229, 25%, 31%);
@@ -205,18 +203,12 @@
 /* GENERAL STYLES START */
 body {
     font-family: 'Barlow Semi Condensed', sans-serif;
+    background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 }
 
 .container {
     display: grid;
-    background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-    height: 100vh;
-}
-
-.gameArea {
-    display: grid;
-
-    /* grid-template-rows: 0.2fr 0.6fr 0.1fr 0.1fr; */
+    grid-template-rows: 0.2fr 0.6fr 0.1fr 0.1fr;
 }
 /* GENERAL STYLES END */
 
