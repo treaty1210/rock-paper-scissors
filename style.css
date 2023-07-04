@@ -85,6 +85,9 @@
 /* MOBILE BUTTON LOCATIONS START */
 
 /* MOBILE PICKS LOCATION/SIZE START*/
+    .picks {
+        margin-bottom: -60px;
+    }
     .picks > .player > .playerSelection,
     .picks > .house > .houseSelection {
         display: flex;
@@ -131,6 +134,24 @@
     .result, .playAgain {
         justify-self: center;
     }
+
+    .result {
+        color: white;
+        margin-bottom: 50px;
+        font-size: 50px;
+        font-weight: 700;
+    }
+
+    .playAgain {
+        color: hsl(229, 25%, 31%);
+        background-color: white;
+        padding: 20px;
+        width: 40vw;
+        text-align: center;
+        border: 1px solid white;
+        border-radius: 6px;
+        font-size: 24px;
+    }
 /* RESULT + PLAY AGAIN END */
 
 /* RULES START */
@@ -140,6 +161,11 @@
     }
 /* RULES END */
 }
+/* MOBILE END */
+
+
+
+
 
 /* GENERAL STYLES START */
 body {
@@ -214,11 +240,6 @@ body {
 }
 /* GENERAL BUTTON STYLES END */
 
-/* .pentagon {
-    justify-self: center;
-    align-self: center; 
-} */
-
 /* HIDE DIV ELEMENTS UNTIL NEEDED START*/
 .picks, .result, .playAgain {
     display: none;
@@ -268,8 +289,5 @@ body {
     font-size: 11px; 
     text-align: center;
     color: hsl(228, 45%, 44%);
-    /* display: flex;
-    justify-content: center;
-    align-items: end; */
 }
 /* GENERAL ATTRIBUTION END */
