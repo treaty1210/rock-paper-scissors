@@ -26,6 +26,8 @@
     /* PICK AREA START */
     .pickArea {
         justify-self: center;
+        display: grid;
+        justify-items: center;
     }
 
     .pickArea, .picks {
@@ -37,7 +39,7 @@
         width: 250px;
         height: 250px;
         margin-top: 25px;
-        position: relative;
+        /* position: relative; */
         left: 850px;
     }
 
@@ -59,27 +61,26 @@
 
     .pickArea > .rockBtn {
         bottom: 50px;
-        left: 1000px;
+        left: 70px;
     }
 
     .pickArea > .paperBtn {
         bottom: 290px;
-        left: 1030px;
+        left: 110px;
     }
 
     .pickArea > .scissorsBtn {
         bottom: 450px;
-        left: 925px;
     }
 
     .pickArea > .lizardBtn {
         bottom: 320px;
-        left: 850px;
+        right: 70px;
     }
 
     .pickArea > .spockBtn {
         bottom: 560px;
-        left: 800px;
+        right: 110px;
     }
     /* ICONS END */
 
@@ -175,4 +176,30 @@
     }
     /* RULES END */ 
     
+    .result, .playAgain {
+        justify-self: center;
+    }
+
+    .result {
+        color: white;
+        margin-bottom: 50px;
+        font-size: 50px;
+        font-weight: 700;
+    }
+
+    .playAgain {
+        color: hsl(229, 25%, 31%);
+        background-color: white;
+        padding: 20px;
+        width: 20vw;
+        text-align: center;
+        border: 1px solid white;
+        border-radius: 6px;
+        font-size: 24px;
+    }
+
+    .first {
+        display: grid;
+        justify-items: center;
+    }
 }
