@@ -94,7 +94,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 - [Radial Gradient](https://www.w3schools.com/css/css3_gradients_radial.asp) - This helped me figure out the syntax for radial gradients. 
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) - This is an article taught me how to create a delay for my function. I think I will be using this more often in the future when needed.
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
