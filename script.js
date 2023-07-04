@@ -168,7 +168,19 @@ function showComputerSelection(computerSelection) {
 function showResult(msg) {
     result.style.display = "block";
     result.innerText = `${msg}`
+    playAgain.style.display = "block";
 }
+
+
+
+//Play again button
+playAgain.addEventListener("click", () => {
+    pickArea.style.display = "block"
+    picks.style.display = "none"
+    result.style.display = "none"
+    playAgain.style.display = "none"
+})
+
 
 //TO DO:
 //so user select image and then the computer's choice should appear afterwards
