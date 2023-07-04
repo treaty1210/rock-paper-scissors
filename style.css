@@ -262,7 +262,7 @@
         height: 250px;
         margin-top: 25px;
         position: relative;
-        left: 44%;
+        left: 850px;
     }
 
     .pickArea :not(:first-child) {
@@ -306,6 +306,99 @@
         left: 800px;
     }
     /* ICONS END */
+
+    /* PICKS START */
+    .picks {
+        margin-bottom: -60px;
+    }
+
+    .player {
+        grid-template-areas: 
+        "playerPick"
+        "playerSelection";
+    }
+    
+
+    .playerSelection,
+    .houseSelection {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+
+    .playerSelection {
+        grid-area: playerSelection;
+    }
+
+    .playerPick {
+        grid-area: playerPick;
+    }
+
+    .playerSelection > * {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .playerSelection > * > img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .house {
+        grid-template-areas: 
+        "housePick"
+        "houseSelection";
+    }
+
+    .houseSelection {
+        grid-area: houseSelection;
+    }
+
+    .housePick {
+        grid-area: housePick;
+    }
+
+
+    .houseSelection > * {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .houseSelection > * > img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .playerPick, .housePick {
+        font-size: 20px;
+        margin-bottom: 20px;
+        align-self: flex-end;
+    }
+    /* PICKS END */
+
+    /* RULES START */
+    .rules {
+        justify-self: flex-end;
+        align-self: flex-end;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        padding: 20px;
+        width: 8vw;
+        color: white;
+        border: 1px solid white;
+        border-radius: 6px;
+        text-align: center;
+    }
+    /* RULES END */ 
+    
 }
 /* DESKTOP END */
 
