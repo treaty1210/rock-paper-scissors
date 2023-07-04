@@ -371,5 +371,6 @@ body {
 
 .rulesPopUp {
     display: none;
+    z-index: 1;
 }
 /* RULES + RULES ADJACENT END */
