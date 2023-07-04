@@ -14,6 +14,8 @@ const closeRules = document.querySelector(".closeRules")
 const attribution = document.querySelector(".attribution")
 const body = document.querySelector("body")
 const rulesPopUp = document.querySelector(".rulesPopUp")
+const first = document.querySelector(".first")
+const second = document.querySelector(".second")
 
 //Messages for round outcome
 let playerScore = 0;
@@ -104,7 +106,9 @@ const itemBtn = ["rockBtn", "paperBtn", "scissorsBtn", "lizardBtn", "spockBtn"]
 
 //Function to show selection page
 function showPlayerSelect(e) {
+    first.style.display = "none"
     pickArea.style.display = "none";
+    second.style.display = "grid"
     picks.style.display = "grid";
 
     if (e.target.className == "rock") {
@@ -181,7 +185,9 @@ function showResult(msg) {
 
 //Play again button
 playAgain.addEventListener("click", () => {
-    pickArea.style.display = "block"
+    first.style.display = "grid"
+    pickArea.style.display = "grid"
+    second.style.display = "none"
     picks.style.display = "none"
     result.style.display = "none"
     playAgain.style.display = "none"
@@ -189,7 +195,7 @@ playAgain.addEventListener("click", () => {
 
 //Display rules page
 rules.addEventListener("click", () => {
-    rulesPopUp.style.display = "block";
+    rulesPopUp.style.display = "grid";
     rulesPage.appendChild(attribution)
 })
 
