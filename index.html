@@ -19,42 +19,50 @@
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <img src="/images/logo-bonus.svg" alt="logo" class="logo">
-      <div class="score">Score<span class="scoreVal">0</span></div>
-    </div>
-    
-    <div class="pickArea">
-      <img src="images/bg-pentagon.svg" alt="pentagon" class="pentagon">
-      <div class="rockBtn btn"><img src="images/icon-rock.svg" alt="rock" class="rock"></div>  
-      <div class="paperBtn btn"><img src="images/icon-paper.svg" alt="paper" class="paper"></div>
-      <div class="scissorsBtn btn"><img src="images/icon-scissors.svg" alt="scissors" class="scissors"></div>
-      <div class="lizardBtn btn"><img src="images/icon-lizard.svg" alt="lizard" class="lizard"></div>
-      <div class="spockBtn btn"><img src="images/icon-spock.svg" alt="spock hand sign" class="spock"></div>
-    </div>
-
-    <div class="picks">
-      <div class="player">
-        <div class="playerSelection"></div>
-        <div class="playerPick">You Picked</div>
+    <div class="gameArea">
+      <div class="header">
+        <img src="/images/logo-bonus.svg" alt="logo" class="logo">
+        <div class="score">Score<span class="scoreVal">0</span></div>
       </div>
-      <div class="house">
-        <div class="houseSelection"></div>
-        <div class="housePick">The House Picked</div>
+      
+      <div class="pickArea">
+        <img src="images/bg-pentagon.svg" alt="pentagon" class="pentagon">
+        <div class="rockBtn btn"><img src="images/icon-rock.svg" alt="rock" class="rock"></div>  
+        <div class="paperBtn btn"><img src="images/icon-paper.svg" alt="paper" class="paper"></div>
+        <div class="scissorsBtn btn"><img src="images/icon-scissors.svg" alt="scissors" class="scissors"></div>
+        <div class="lizardBtn btn"><img src="images/icon-lizard.svg" alt="lizard" class="lizard"></div>
+        <div class="spockBtn btn"><img src="images/icon-spock.svg" alt="spock hand sign" class="spock"></div>
+      </div>
+
+      <div class="picks">
+        <div class="player">
+          <div class="playerSelection"></div>
+          <div class="playerPick">You Picked</div>
+        </div>
+        <div class="house">
+          <div class="houseSelection"></div>
+          <div class="housePick">The House Picked</div>
+        </div>
+      </div>
+
+      <div class="result"></div>
+
+      <div class="playAgain">PLAY AGAIN</div>
+
+      
+      <div class="rules">RULES</div>
+
+      <div class="attribution"> <!-- append this to the rules page in js when clicking on rules button-->
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
       </div>
     </div>
 
-    <div class="result"></div>
-
-    <div class="playAgain">Play Again</div>
-
-    
-    <div class="rules">Rules</div>
-
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </div>
+  <div class="rulesPage">
+    <div class="rulesTitle">RULES</div>
+    <img src="images/image-rules-bonus.svg" alt="picture of the rules">
+    <div class="closeRules">X</div>
   </div>
+</div>
 </body>
 </html>
