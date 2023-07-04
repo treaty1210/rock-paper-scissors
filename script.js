@@ -8,6 +8,9 @@ const playAgain = document.querySelector(".playAgain")
 const rules = document.querySelector(".rules")
 const playerIcon = document.querySelector(".playerSelection")
 const houseIcon = document.querySelector(".houseSelection")
+const rulesPage = document.querySelector(".rulesPage")
+const container = document.querySelector(".container")
+const closeRules = document.querySelector(".closeRules")
 
 //Messages for round outcome
 let playerScore = 0;
@@ -48,47 +51,47 @@ function round(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         console.log("tie")
         setTimeout(() => {
-            showResult("Tie")
+            showResult("TIE")
         }, 2000)
     } else if (playerSelection == "rock" && computerSelection == "scissors" || 
         playerSelection == "rock" && computerSelection == "lizard") {
         console.log("win")
         setTimeout(() => {
-            showResult("You Win")
+            showResult("YOU WIN")
         }, 2000)
         playerScore++;
     } else if (playerSelection == "paper" && computerSelection == "rock" || 
         playerSelection == "paper" && computerSelection == "spock") {
         console.log("win")
         setTimeout(() => {
-            showResult("You Win")
+            showResult("YOU WIN")
         }, 2000)
         playerScore++;
     } else if (playerSelection == "scissors" && computerSelection == "paper" ||
         playerSelection == "scissors" && computerSelection == "lizard") {
         console.log("win")
         setTimeout(() => {
-            showResult("You Win")
+            showResult("YOU WIN")
         }, 2000)
         playerScore++;
     } else if (playerSelection == "lizard" && computerSelection == "paper" ||
         playerSelection == "lizard" && computerSelection == "spock") {
             console.log("win")
             setTimeout(() => {
-                showResult("You Win")
+                showResult("YOU WIN")
             }, 2000)
             playerScore++;
     } else if (playerSelection == "spock" && computerSelection == "scissors" || 
         playerSelection == "spock" && computerSelection == "rock") {
             console.log("win")
             setTimeout(() => {
-                showResult("You Win")
+                showResult("YOU WIN")
             }, 2000)
             playerScore++;
     } else {
         console.log("lose")
         setTimeout(() => {
-            showResult("You Lose")
+            showResult("YOU LOSE")
         }, 2000)
     }
 }
@@ -181,65 +184,14 @@ playAgain.addEventListener("click", () => {
     playAgain.style.display = "none"
 })
 
+//Display rules page
+rules.addEventListener("click", () => {
+    container.style.display = "none";
+    rulesPage.style.display = "grid";
+})
 
-//TO DO:
-//so user select image and then the computer's choice should appear afterwards
-//after selection, selection pentagon should disappear
-//add a play again button which should reset everything and make the pentagon reappear and selection should be hidden again (eventlistener)
-
-
-//NO LONGER NEED A STOP WIN FUNCTION (OUTDATED DOES NOT WORK WITH ROCK PAPER SCISSORS LIZARD SPOCK)
-
-// function stopWin(playerScore, compScore) { 
-//     console.log("1", playerScore, "2", compScore)
-//     if (playerScore === 5) {
-//         const p = document.createElement("p");
-//         p.style.backgroundColor = "green";
-//         p.style.fontWeight = "bold";
-//         p.style.color = "white";
-//         p.style.fontSize = "32px";
-//         p.innerText = `Player wins: ${playerScore} to ${compScore}`;
-//         tally.appendChild(p);
-//     } else if (compScore === 5) {
-//         const p = document.createElement("p");
-//         p.style.backgroundColor = "red";
-//         p.style.fontWeight = "bold";
-//         p.style.color = "white";
-//         p.style.fontSize = "32px";
-//         p.innerText = `Computer wins: ${compScore} to ${playerScore}`;
-//         tally.appendChild(p);
-//     }
-// }
-
-
-
-
-//OUTDATED EVENT LISTENERS
-// rock.addEventListener("click", () => { 
-//     const computerSelection = getComputerChoice();
-//     const playerSelection = "rock";
-//     round(playerSelection, computerSelection);
-//     playerScoreSpan.innerText = `Player: ${playerScore}`;
-//     compScoreSpan.innerText = `Computer: ${compScore}`;
-//     stopWin(playerScore, compScore);
-// });
- 
-// paper.addEventListener("click", () => {
-//     const computerSelection = getComputerChoice();
-//     const playerSelection = "paper";
-//     round(playerSelection, computerSelection);
-//     playerScoreSpan.innerText = `Player: ${playerScore}`;
-//     compScoreSpan.innerText = `Computer: ${compScore}`;
-//     stopWin(playerScore, compScore)
-// });
-
-// scissors.addEventListener("click", () => {
-//     const computerSelection = getComputerChoice();
-//     const playerSelection = "scissors";
-//     round(playerSelection, computerSelection);
-//     playerScoreSpan.innerText = `Player: ${playerScore}`;
-//     compScoreSpan.innerText = `Computer: ${compScore}`;
-//     stopWin(playerScore, compScore)
-// });
-
-
+//Close rules page
+closeRules.addEventListener("click", () => {
+    rulesPage.style.display = "none";
+    container.style.display = "grid";
+})
