@@ -156,10 +156,25 @@
 
 /* RULES START */
     .rules {
-        justify-self: flex-end;
+        justify-self: center;
         align-self: flex-end;
+        margin-top: 50px;
+        padding: 20px;
+        width: 40vw;
+        color: white;
+        border: 1px solid white;
+        border-radius: 6px;
+        text-align: center;
     }
 /* RULES END */
+
+/* ATTRIBUTION LOCATION START */
+    .attribution {
+        position: fixed;
+        bottom: 0;
+        left: 55px;
+    }
+/* ATTRIBUTION LOCATION END */
 }
 /* MOBILE END */
 
