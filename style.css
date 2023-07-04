@@ -171,7 +171,6 @@
 
 /* RULES PAGE START */
     .rulesPopUp {
-        display: none;
         position: fixed;
         top: 0;
         left: 0;
@@ -223,6 +222,11 @@
 
 
 
+/* DESKTOP START */
+@media only screen and (min-width: 769px) {
+
+}
+/* DESKTOP END */
 
 
 /* GENERAL STYLES START */
@@ -351,10 +355,6 @@ body {
 }
 /* GENERAL PICKS STYLE END */
 
-.rules {
-    grid-area: rules;
-}
-
 /* GENERAL ATTRIBUTION START */
 .attribution {
     font-size: 11px; 
@@ -364,3 +364,12 @@ body {
     align-self: flex-end;
 }
 /* GENERAL ATTRIBUTION END */
+/* RULES + RULES ADJACENT START */
+.rules {
+    grid-area: rules;
+}
+
+.rulesPopUp {
+    display: none;
+}
+/* RULES + RULES ADJACENT END */
