@@ -159,6 +159,7 @@
         justify-self: center;
         align-self: flex-end;
         margin-top: 50px;
+        margin-bottom: 20px;
         padding: 20px;
         width: 40vw;
         color: white;
@@ -167,14 +168,6 @@
         text-align: center;
     }
 /* RULES END */
-
-/* ATTRIBUTION LOCATION START */
-    /* .attribution {
-        position: fixed;
-        bottom: 0;
-        left: 55px;
-    } */
-/* ATTRIBUTION LOCATION END */
 
 /* RULES PAGE START */
     .rulesPopUp {
@@ -190,7 +183,8 @@
         background-color: white;
         justify-items: center;
         align-content: center;
-        grid-template-rows: 0.5fr 1fr 0.5fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1fr 0.5fr 0.5fr;
         display: grid;
         position: fixed;
         top: 0;
@@ -203,9 +197,26 @@
         align-self: center;
     }
 
+    .rulesTitle {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .rulesPage > img {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .closeRules {
+        grid-area:  3/ 1 / 4 / 2;
+    }
+
     .rulesTitle, .closeRules {
         font-size: 30px;
         color: hsl(229, 25%, 31%);
+    }
+
+    .rulesPage > .attribution {
+        grid-area: 4 / 1 / 5 / 2;
+        align-self: flex-end;
     }
 }
 /* MOBILE END */
@@ -222,15 +233,23 @@ body {
 
 .container {
     display: grid;
-    grid-template-rows: 0.2fr 0.6fr 0.1fr 0.1fr;
+    grid-template-rows: 0.2fr 0.6fr 0.2fr 0.2fr 0.1fr 0.3fr;
     height: 100vh;
     background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    grid-template-areas: 
+    "hd"
+    "pA"
+    "."
+    "."
+    "rules"
+    "att";
 }
 /* GENERAL STYLES END */
 
 /* GENERAL HEADER STYLES START */
 .header {
     display: grid;
+    grid-area: hd;
 }
 
 .score {
@@ -250,9 +269,9 @@ body {
 /* GENERAL HEADER STYLES END */
 
 /* GENERAL PICK AREA STYLES START */
-/* .pickArea {
-    display: grid;
-} */
+.pickArea {
+    grid-area: pA;
+}
 
 .pickArea :not(:first-child) > img {
     background-color: white;
@@ -332,10 +351,16 @@ body {
 }
 /* GENERAL PICKS STYLE END */
 
+.rules {
+    grid-area: rules;
+}
+
 /* GENERAL ATTRIBUTION START */
 .attribution {
     font-size: 11px; 
     text-align: center;
     color: hsl(228, 45%, 44%);
+    grid-area: att;
+    align-self: flex-end;
 }
 /* GENERAL ATTRIBUTION END */
