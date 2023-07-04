@@ -1,12 +1,28 @@
 //Query selectors
-//update these to be click on the images instead of buttons
-//also add spock and lizard
 const btns = document.querySelectorAll(".btn")
+const score = document.querySelector('.scoreVal')
+const pickArea = document.querySelector(".pickArea")
+const picks = document.querySelector(".picks")
+const result = document.querySelector(".result")
+const playAgain = document.querySelector(".playAgain")
+const rules = document.querySelector(".rules")
+const playerIcon = document.querySelector(".playerSelection")
+const houseIcon = document.querySelector(".houseSelection")
+
+//Messages for round outcome
+let playerScore = 0;
+
+//Event listener for the buttons
 btns.forEach(button => button.addEventListener("click", (e) => {
     let playerSelection = String(e.target.className)
+    showPlayerSelect(e);
     let computerSelection = getComputerChoice();
+    setTimeout(() => {
+        showComputerSelection(computerSelection) //small delay for house pick
+    }, 1000);
     console.log(playerSelection, computerSelection);
     round(playerSelection, computerSelection)
+    score.textContent = `${playerScore}`
 }))
 
 //Determines randomly computer choice
@@ -24,11 +40,6 @@ function getComputerChoice() {
     }
 }
 
-//Messages for round outcome
-let playerScore = 0; //change this to only player score and have it update in html like before (can also try to make it remain after refresh of page)
-// let draw = "It's a draw."; //move this to html display none 
-// let win = "You win!"; //move this to html display none 
-// let lose = "You lose!"; //move this to html display none 
 
 //Main function of RPS
 function round(playerSelection, computerSelection) {
@@ -37,25 +48,106 @@ function round(playerSelection, computerSelection) {
     } else if (playerSelection == "rock" && computerSelection == "scissors" || 
         playerSelection == "rock" && computerSelection == "lizard") {
         console.log("win")
-        // playerScore++;
+        playerScore++;
     } else if (playerSelection == "paper" && computerSelection == "rock" || 
         playerSelection == "paper" && computerSelection == "spock") {
         console.log("win")
-        // playerScore++;
+        playerScore++;
     } else if (playerSelection == "scissors" && computerSelection == "paper" ||
         playerSelection == "scissors" && computerSelection == "lizard") {
         console.log("win")
-        // playerScore++;
+        playerScore++;
     } else if (playerSelection == "lizard" && computerSelection == "paper" ||
         playerSelection == "lizard" && computerSelection == "spock") {
             console.log("win")
+            playerScore++;
     } else if (playerSelection == "spock" && computerSelection == "scissors" || 
         playerSelection == "spock" && computerSelection == "rock") {
             console.log("win")
+            playerScore++;
     } else {
         console.log("lose")
     }
 }
+
+//array to select class
+const itemBtn = ["rockBtn", "paperBtn", "scissorsBtn", "lizardBtn", "spockBtn"]
+
+//Function to show selection page
+function showPlayerSelect(e) {
+    pickArea.style.display = "none";
+    picks.style.display = "grid";
+
+    if (e.target.className == "rock") {
+        let pIcon = itemBtn[0]
+        playerIcon.innerHTML = `<div class="${pIcon}">
+            <img src="${e.target.src}" alt="${e.target.alt}" class="${e.target.className}">
+            </div>`
+    } else if (e.target.className == "paper") {
+        let pIcon = itemBtn[1]
+        playerIcon.innerHTML = `<div class="${pIcon}">
+            <img src="${e.target.src}" alt="${e.target.alt}" class="${e.target.className}">
+            </div>`
+    } else if (e.target.className == "scissors") {
+        let pIcon = itemBtn[2]
+        playerIcon.innerHTML = `<div class="${pIcon}">
+            <img src="${e.target.src}" alt="${e.target.alt}" class="${e.target.className}">
+            </div>`
+    } else if (e.target.className == "lizard") {
+        let pIcon = itemBtn[3]
+        playerIcon.innerHTML = `<div class="${pIcon}">
+            <img src="${e.target.src}" alt="${e.target.alt}" class="${e.target.className}">
+            </div>`
+    } else {
+        let pIcon = itemBtn[4]
+        playerIcon.innerHTML = `<div class="${pIcon}">
+            <img src="${e.target.src}" alt="${e.target.alt}" class="${e.target.className}">
+            </div>`
+    }
+}
+
+//function to show computer selection
+function showComputerSelection(computerSelection) {
+    if (computerSelection == "rock") {
+        let cIcon = itemBtn[0]
+        houseIcon.innerHTML = `<div class="${cIcon}">
+            <img src="images/icon-rock.svg" alt="rock" class="rock">
+            </div>`;
+        houseIcon.style.display = "flex"
+    } else if (computerSelection == "paper") {
+        let cIcon = itemBtn[1]
+        houseIcon.innerHTML = `<div class="${cIcon}">
+            <img src="images/icon-paper.svg" alt="paper" class="paper">
+            </div>`;
+        houseIcon.style.display = "flex"
+    } else if (computerSelection == "scissors") {
+        let cIcon = itemBtn[2]
+        houseIcon.innerHTML = `<div class="${cIcon}">
+            <img src="images/icon-scissors.svg" alt="scissors" class="scissors">
+            </div>`;
+        houseIcon.style.display = "flex"
+    } else if (computerSelection == "lizard") {
+        let cIcon = itemBtn[3]
+        houseIcon.innerHTML = `<div class="${cIcon}">
+            <img src="images/icon-lizard.svg" alt="lizard" class="lizard">
+            </div>`;
+        houseIcon.style.display = "flex"
+    } else if (computerSelection == "spock") {
+        let cIcon = itemBtn[4]
+        houseIcon.innerHTML = `<div class="${cIcon}">
+            <img src="images/icon-spock.svg" alt="spock" class="spock">
+            </div>`;
+            houseIcon.style.display = "flex"
+    }
+}
+
+document.querySelector("body > div > div.pickArea > div.paperBtn.btn > img")
+//TO DO:
+//make your pick first and then computer should make a pick
+//so user select image and then the computer's choice should appear afterwards
+//after selection, selection pentagon should disappear
+//add a play again button which should reset everything and make the pentagon reappear and selection should be hidden again
+
 
 //NO LONGER NEED A STOP WIN FUNCTION (OUTDATED DOES NOT WORK WITH ROCK PAPER SCISSORS LIZARD SPOCK)
 
@@ -80,12 +172,7 @@ function round(playerSelection, computerSelection) {
 //     }
 // }
 
-//Event listeners for buttons (need to change to image instead of button, logic should still remain the same)
-//probably just remove the comp score
-//make your pick first and then computer should make a pick
-//so user select image and then the computer's choice should appear afterwards
-//after selection, selection pentagon should disappear
-//add a play again button which should reset everything and make the pentagon reappear and selection should be hidden again
+
 
 
 //OUTDATED EVENT LISTENERS
