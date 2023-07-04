@@ -169,20 +169,34 @@
 /* RULES END */
 
 /* ATTRIBUTION LOCATION START */
-    .attribution {
+    /* .attribution {
         position: fixed;
         bottom: 0;
         left: 55px;
-    }
+    } */
 /* ATTRIBUTION LOCATION END */
 
 /* RULES PAGE START */
+    .rulesPopUp {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(33, 33, 33, 0.95);
+    }
     .rulesPage {
         background-color: white;
-        display: none;
         justify-items: center;
         align-content: center;
         grid-template-rows: 0.5fr 1fr 0.5fr;
+        display: grid;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 
     .rulesTitle, .rulesPage > img, .closeRules {
@@ -203,12 +217,14 @@
 /* GENERAL STYLES START */
 body {
     font-family: 'Barlow Semi Condensed', sans-serif;
-    background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+
 }
 
 .container {
     display: grid;
     grid-template-rows: 0.2fr 0.6fr 0.1fr 0.1fr;
+    height: 100vh;
+    background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 }
 /* GENERAL STYLES END */
 
