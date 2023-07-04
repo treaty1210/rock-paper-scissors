@@ -11,6 +11,7 @@ const houseIcon = document.querySelector(".houseSelection")
 const rulesPage = document.querySelector(".rulesPage")
 const gameArea = document.querySelector(".gameArea")
 const closeRules = document.querySelector(".closeRules")
+const attribution = document.querySelector(".attribution")
 
 //Messages for round outcome
 let playerScore = 0;
@@ -188,10 +189,12 @@ playAgain.addEventListener("click", () => {
 rules.addEventListener("click", () => {
     gameArea.style.display = "none";
     rulesPage.style.display = "grid";
+    rulesPage.appendChild(attribution)
 })
 
 //Close rules page
 closeRules.addEventListener("click", () => {
     rulesPage.style.display = "none";
     gameArea.style.display = "grid";
+    gameArea.appendChild(attribution)
 })
