@@ -120,7 +120,25 @@
         width: 60px;
         height: 60px;
     }
+
+    .playerPick, .housePick {
+        font-size: 20px;
+        margin-top: 10px;
+    }
 /* MOBILE PICKS LOCATION/SIZE END */
+
+/* RESULT + PLAY AGAIN START */
+    .result, .playAgain {
+        justify-self: center;
+    }
+/* RESULT + PLAY AGAIN END */
+
+/* RULES START */
+    .rules {
+        justify-self: flex-end;
+        align-self: flex-end;
+    }
+/* RULES END */
 }
 
 /* GENERAL STYLES START */
