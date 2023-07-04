@@ -13,6 +13,7 @@ const container = document.querySelector(".container")
 const closeRules = document.querySelector(".closeRules")
 const attribution = document.querySelector(".attribution")
 const body = document.querySelector("body")
+const rulesPopUp = document.querySelector(".rulesPopUp")
 
 //Messages for round outcome
 let playerScore = 0;
@@ -188,16 +189,12 @@ playAgain.addEventListener("click", () => {
 
 //Display rules page
 rules.addEventListener("click", () => {
-    container.style.display = "none";
-    rulesPage.style.display = "grid";
+    rulesPopUp.style.display = "block";
     rulesPage.appendChild(attribution)
-    body.style.backgroundImage = "none";
 })
 
 //Close rules page
 closeRules.addEventListener("click", () => {
-    rulesPage.style.display = "none";
-    container.style.display = "grid";
+    rulesPopUp.style.display = "none";
     container.appendChild(attribution)
-    body.style.backgroundImage = "radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%))"
 })
