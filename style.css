@@ -1,8 +1,11 @@
 @media only screen and (max-width: 768px) {
+/* MOBILE GENERAL SIZE START */
     .container {
         grid-template-rows: 0.7fr 2fr 0.3fr 0.1fr;
     }
+/* MOBILE GENERAL SIZE END */
 
+/* MOBILE HEADER SIZE START */
     .header {
         grid-template-columns: 1fr 1fr;
         border: 2px solid hsl(217, 16%, 45%);
@@ -23,8 +26,10 @@
         border: 1px solid white;
         border-radius: 10px;
     }
+/* MOBILE HEADER SIZE END */
 
-    .pickArea {
+/* MOBILE PICK AREA LOCATION/SIZE START */
+    .pickArea, .picks {
         width: 100vw;
         height: 50vh;
     }
@@ -45,49 +50,80 @@
         justify-content: center;
         align-items: center;
     }
+/* MOBILE PICK AREA LOCATION/SIZE END */
 
+/* MOBILE BUTTON LOCATIONS/SIZE START */
     .pickArea :not(:first-child) > img {
         width: 60px;
         height: 60px;
     }
 
-
-    .rockBtn {
-        background-image: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
-        border-radius: 50%;
+    .pickArea > .rockBtn {
         bottom: 50px;
         left: 210px;
     }
 
-    .paperBtn {
-        background-image: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
-        border-radius: 50%;
+    .pickArea > .paperBtn {
         bottom: 290px;
         left: 260px;
     }
 
-    .scissorsBtn {
-        background-image: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
-        border-radius: 50%;
+    .pickArea > .scissorsBtn {
         bottom: 450px;
         left: 140px;
     }
 
-    .lizardBtn {
-        background-image: radial-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
-        border-radius: 50%;
+    .pickArea > .lizardBtn {
         bottom: 320px;
         left: 65px;
     }
 
-    .spockBtn {
-        background-image: radial-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
-        border-radius: 50%;
+    .pickArea > .spockBtn {
         bottom: 560px;
         left: 30px;
     }
+/* MOBILE BUTTON LOCATIONS START */
+
+/* MOBILE PICKS LOCATION/SIZE START*/
+    .picks > .player > .playerSelection,
+    .picks > .house > .houseSelection {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        margin-bottom: 12px;
+    }
+
+    .picks > .player > .playerSelection > * {
+        position: relative;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .picks > .player > .playerSelection > * > img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .picks > .house > .houseSelection > * {
+        position: relative;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .picks > .house > .houseSelection > * > img {
+        width: 60px;
+        height: 60px;
+    }
+/* MOBILE PICKS LOCATION/SIZE END */
 }
 
+/* GENERAL STYLES START */
 body {
     background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
     font-family: 'Barlow Semi Condensed', sans-serif;
@@ -98,7 +134,9 @@ body {
     grid-template-rows: 0.2fr 0.6fr 0.1fr 0.1fr;
 
 }
+/* GENERAL STYLES END */
 
+/* GENERAL HEADER STYLES START */
 .header {
     display: grid;
 }
@@ -117,7 +155,9 @@ body {
 .scoreVal {
     color: hsl(229, 25%, 31%);
 }
+/* GENERAL HEADER STYLES END */
 
+/* GENERAL PICK AREA STYLES START */
 /* .pickArea {
     display: grid;
 } */
@@ -127,16 +167,85 @@ body {
     padding: 5px;
     border-radius: 50%;
 }
+/* GENERAL PICK AREA STYLES END */
+
+/* GENERAL BUTTON STYLES START */
+.rockBtn {
+    background-image: radial-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    border-radius: 50%;
+}
+
+.paperBtn {
+    background-image: radial-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+    border-radius: 50%;
+}
+
+.scissorsBtn {
+    background-image: radial-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    border-radius: 50%;
+}
+
+.lizardBtn {
+    background-image: radial-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+    border-radius: 50%;
+}
+
+.spockBtn {
+    background-image: radial-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+    border-radius: 50%;
+}
+/* GENERAL BUTTON STYLES END */
 
 /* .pentagon {
     justify-self: center;
     align-self: center; 
 } */
 
+/* HIDE DIV ELEMENTS UNTIL NEEDED START*/
 .picks, .result, .playAgain {
     display: none;
 }
+/* HIDE DIV ELEMENTS UNTIL END */
 
+/* GENERAL PICKS STYLE START */
+.picks {
+    grid-template-columns: 1fr 1fr;
+}
+
+.picks > .player > .playerSelection > * > img {
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.player {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+}
+
+.playerPick, .housePick {
+    color: white;
+}
+
+.picks > .house > .houseSelection > * > img {
+    background-color: white;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.house {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+}
+
+.houseSelection {
+    display: none;
+}
+/* GENERAL PICKS STYLE END */
+
+/* GENERAL ATTRIBUTION START */
 .attribution {
     font-size: 11px; 
     text-align: center;
@@ -145,3 +254,4 @@ body {
     justify-content: center;
     align-items: end; */
 }
+/* GENERAL ATTRIBUTION END */
