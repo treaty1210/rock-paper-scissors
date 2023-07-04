@@ -7,7 +7,6 @@
 
 /* MOBILE HEADER SIZE START */
     .header {
-        grid-template-columns: 1fr 1fr;
         border: 2px solid hsl(217, 16%, 45%);
         border-radius: 6px;
         margin: 24px;
@@ -82,7 +81,7 @@
         bottom: 560px;
         left: 30px;
     }
-/* MOBILE BUTTON LOCATIONS START */
+/* MOBILE BUTTON LOCATIONS END */
 
 /* MOBILE PICKS LOCATION/SIZE START*/
     .picks {
@@ -224,7 +223,89 @@
 
 /* DESKTOP START */
 @media only screen and (min-width: 769px) {
+    /* HEADER AREA START */
+    .header {
+        justify-self: center;
+        width: 50vw;
+        margin: 20px;
+        border: 2px solid hsl(217, 16%, 45%);
+        border-radius: 6px;
+    }
 
+    .header > img {
+        width: 100px;
+        margin: 10px;
+        margin-left: 40px;
+    }
+
+    .score {
+        padding: 30px;
+        margin: 10px;
+        margin-right: 40px;
+        border: 1px solid white;
+        border-radius: 6px;
+    }
+    /* HEADER AREA END */
+
+    /* PICK AREA START */
+    .pickArea {
+        justify-self: center;
+    }
+
+    .pickArea, .picks {
+        width: 100vw;
+        height: 50vh;
+    }
+
+    .pentagon {
+        width: 250px;
+        height: 250px;
+        margin-top: 25px;
+        position: relative;
+        left: 44%;
+    }
+
+    .pickArea :not(:first-child) {
+        position: relative;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* PICK AREA END */
+
+    /* ICONS START */
+    .pickArea :not(:first-child) > img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .pickArea > .rockBtn {
+        bottom: 50px;
+        left: 1000px;
+    }
+
+    .pickArea > .paperBtn {
+        bottom: 290px;
+        left: 1030px;
+    }
+
+    .pickArea > .scissorsBtn {
+        bottom: 450px;
+        left: 925px;
+    }
+
+    .pickArea > .lizardBtn {
+        bottom: 320px;
+        left: 850px;
+    }
+
+    .pickArea > .spockBtn {
+        bottom: 560px;
+        left: 800px;
+    }
+    /* ICONS END */
 }
 /* DESKTOP END */
 
@@ -232,7 +313,6 @@
 /* GENERAL STYLES START */
 body {
     font-family: 'Barlow Semi Condensed', sans-serif;
-
 }
 
 .container {
@@ -254,6 +334,7 @@ body {
 .header {
     display: grid;
     grid-area: hd;
+    grid-template-columns: 1fr 1fr;
 }
 
 .score {
