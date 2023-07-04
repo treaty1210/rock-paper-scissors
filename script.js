@@ -9,9 +9,10 @@ const rules = document.querySelector(".rules")
 const playerIcon = document.querySelector(".playerSelection")
 const houseIcon = document.querySelector(".houseSelection")
 const rulesPage = document.querySelector(".rulesPage")
-const gameArea = document.querySelector(".gameArea")
+const container = document.querySelector(".container")
 const closeRules = document.querySelector(".closeRules")
 const attribution = document.querySelector(".attribution")
+const body = document.querySelector("body")
 
 //Messages for round outcome
 let playerScore = 0;
@@ -187,14 +188,16 @@ playAgain.addEventListener("click", () => {
 
 //Display rules page
 rules.addEventListener("click", () => {
-    gameArea.style.display = "none";
+    container.style.display = "none";
     rulesPage.style.display = "grid";
     rulesPage.appendChild(attribution)
+    body.style.backgroundImage = "none";
 })
 
 //Close rules page
 closeRules.addEventListener("click", () => {
     rulesPage.style.display = "none";
-    gameArea.style.display = "grid";
-    gameArea.appendChild(attribution)
+    container.style.display = "grid";
+    container.appendChild(attribution)
+    body.style.backgroundImage = "radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%))"
 })
