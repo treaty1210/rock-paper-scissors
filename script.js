@@ -9,7 +9,7 @@ const rules = document.querySelector(".rules")
 const playerIcon = document.querySelector(".playerSelection")
 const houseIcon = document.querySelector(".houseSelection")
 const rulesPage = document.querySelector(".rulesPage")
-const container = document.querySelector(".container")
+const gameArea = document.querySelector(".gameArea")
 const closeRules = document.querySelector(".closeRules")
 
 //Messages for round outcome
@@ -186,12 +186,12 @@ playAgain.addEventListener("click", () => {
 
 //Display rules page
 rules.addEventListener("click", () => {
-    container.style.display = "none";
+    gameArea.style.display = "none";
     rulesPage.style.display = "grid";
 })
 
 //Close rules page
 closeRules.addEventListener("click", () => {
     rulesPage.style.display = "none";
-    container.style.display = "grid";
+    gameArea.style.display = "grid";
 })
