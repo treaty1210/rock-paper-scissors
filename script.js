@@ -21,8 +21,10 @@ btns.forEach(button => button.addEventListener("click", (e) => {
         showComputerSelection(computerSelection) //small delay for house pick
     }, 1000);
     console.log(playerSelection, computerSelection);
-    round(playerSelection, computerSelection)
-    score.textContent = `${playerScore}`
+    round(playerSelection, computerSelection);
+    setTimeout(() => {
+        score.textContent = `${playerScore}`;
+    }, 2000)
 }))
 
 //Determines randomly computer choice
@@ -45,28 +47,49 @@ function getComputerChoice() {
 function round(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         console.log("tie")
+        setTimeout(() => {
+            showResult("Tie")
+        }, 2000)
     } else if (playerSelection == "rock" && computerSelection == "scissors" || 
         playerSelection == "rock" && computerSelection == "lizard") {
         console.log("win")
+        setTimeout(() => {
+            showResult("You Win")
+        }, 2000)
         playerScore++;
     } else if (playerSelection == "paper" && computerSelection == "rock" || 
         playerSelection == "paper" && computerSelection == "spock") {
         console.log("win")
+        setTimeout(() => {
+            showResult("You Win")
+        }, 2000)
         playerScore++;
     } else if (playerSelection == "scissors" && computerSelection == "paper" ||
         playerSelection == "scissors" && computerSelection == "lizard") {
         console.log("win")
+        setTimeout(() => {
+            showResult("You Win")
+        }, 2000)
         playerScore++;
     } else if (playerSelection == "lizard" && computerSelection == "paper" ||
         playerSelection == "lizard" && computerSelection == "spock") {
             console.log("win")
+            setTimeout(() => {
+                showResult("You Win")
+            }, 2000)
             playerScore++;
     } else if (playerSelection == "spock" && computerSelection == "scissors" || 
         playerSelection == "spock" && computerSelection == "rock") {
             console.log("win")
+            setTimeout(() => {
+                showResult("You Win")
+            }, 2000)
             playerScore++;
     } else {
         console.log("lose")
+        setTimeout(() => {
+            showResult("You Lose")
+        }, 2000)
     }
 }
 
@@ -141,12 +164,16 @@ function showComputerSelection(computerSelection) {
     }
 }
 
-document.querySelector("body > div > div.pickArea > div.paperBtn.btn > img")
+//displays the result of match
+function showResult(msg) {
+    result.style.display = "block";
+    result.innerText = `${msg}`
+}
+
 //TO DO:
-//make your pick first and then computer should make a pick
 //so user select image and then the computer's choice should appear afterwards
 //after selection, selection pentagon should disappear
-//add a play again button which should reset everything and make the pentagon reappear and selection should be hidden again
+//add a play again button which should reset everything and make the pentagon reappear and selection should be hidden again (eventlistener)
 
 
 //NO LONGER NEED A STOP WIN FUNCTION (OUTDATED DOES NOT WORK WITH ROCK PAPER SCISSORS LIZARD SPOCK)
