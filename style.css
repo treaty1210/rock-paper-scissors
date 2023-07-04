@@ -6,7 +6,7 @@ body {
 .container {
     display: grid;
     grid-template-rows: 0.2fr 0.6fr 0.2fr 0.2fr 0.1fr 0.3fr;
-    height: 100vh;
+    height: 99.9vh;
     background-image: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
     grid-template-areas: 
     "hd"
@@ -15,6 +15,14 @@ body {
     "."
     "rules"
     "att";
+}
+
+.first {
+    height: 50vh;
+}
+
+.second {
+    display: none;
 }
 /* GENERAL STYLES END */
 
